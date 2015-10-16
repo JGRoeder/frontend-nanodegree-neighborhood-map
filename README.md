@@ -1,5 +1,7 @@
 # Neighborhood Map Project: Historic Places
-This application uses the Google Maps API, Factual API and Flickr API to locate and map and display information on various landmarks, primarily those places listed on the NRHP ( National Register of Historic Places ) , but additionally some parks are memorial sites are listed.
+This application was created for submission to Udacity's Front-End Web Developer Nanodegree Program. It utilizes the Google Maps API, Factual API and Flickr API to locate and map and display information on various landmarks, primarily those places listed on the NRHP ( National Register of Historic Places ) , but additionally some parks are memorial sites are listed.
+
+You can view a live version of the app here: [http://http://jgroeder.github.io/frontend-nanodegree-neighborhood-map/](http://jgroeder.github.io/frontend-nanodegree-neighborhood-map/)
 
 ## Usage
 Just type a locality or municipality into the search bar. Please note, that larger areas, such as regions, states or territories are currently not likely to yield many ( if any ), results. So stick to cities and towns.
