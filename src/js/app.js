@@ -3,7 +3,7 @@ var $ = require('jquery');
 var ko = require('knockout');
 var _  = require('underscore');
 var knockout_postbox = require('knockout-postbox');
-var CustomMarker = require('./modules/customMarker.js'); // might be removable
+var CustomMarker = require('./viewmodels/customMarker.js'); // might be removable
 
 /**
 * @description Represents our app in entirety

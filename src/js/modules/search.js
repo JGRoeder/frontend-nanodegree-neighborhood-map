@@ -1,4 +1,3 @@
-console.log('search.js loaded');
 var ko = require('knockout');
 var _  = require('underscore');
 

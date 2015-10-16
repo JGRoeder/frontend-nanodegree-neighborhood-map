@@ -1,9 +1,8 @@
-console.log('map.js loaded');
 var $ = require('jquery');
 var ko = require('knockout');
 var _  = require('underscore');
 var knockout_postbox = require('knockout-postbox');
-var CustomMarker = require('../modules/customMarker.js');
+var CustomMarker = require('../viewmodels/customMarker.js');
 
 /**
 * @description Represents the Map View

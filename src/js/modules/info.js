@@ -4,8 +4,6 @@ var $ = require('jquery');
 var _  = require('underscore');
 var LocationObject = require('../viewmodels/locationViewModel.js');
 
-console.log('info.js loaded');
-
 /**
 * @description Represents the Info Window(list) view
 * @constructor

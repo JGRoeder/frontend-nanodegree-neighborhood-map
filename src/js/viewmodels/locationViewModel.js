@@ -1,10 +1,6 @@
 var ko = require('knockout');
-//var knockout_postbox = require('knockout-postbox');
 var $ = require('jquery');
 var _ = require('underscore');
-
-console.log('locationViewModel.js loaded');
-
 
 /**
 * @description Respresents a single location
