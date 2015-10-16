@@ -1,0 +1,108 @@
+//------------------------------------//
+//   $VARIABLES
+//------------------------------------//
+
+// ///////////////////
+// Base URL
+// ///////////////////
+
+//Helps maintain absolute urls.
+
+$base-url: 'http://www.atomiccolossus.com/staging/wwfg/';
+
+// ///////////////////
+// Max-width
+// ///////////////////
+
+$max-width: 1140px;
+
+// ///////////////////
+// Colors
+// ///////////////////
+
+$brand-blue:    #145791;
+$brand-black: 	#252525;
+
+
+
+$gray : 		#808080;
+
+$gray-light : 	#F1F1F1;
+
+$gray-light-2 : #eee;
+$gray-light-3 : #ddd;
+$gray-light-4 : #bbb;
+$gray-med-2: 	#999;
+$gray-med : 	#666;
+$gray-dark : 	#333;
+$gray-dark-2 : 	#131313;
+$white : 		#fff;
+$black : 		#000;
+
+$dim : 		rgba(0,0,0,0.5);
+$dimmer : 	rgba(0,0,0,0.8);
+
+//$error : #f00; - default
+$error : #CE4040;
+$error-alt : #F0CBCA;
+$valid : #089e00;
+
+$brand-facebook: 	#03539e;
+$brand-twitter: 	#35ccff;
+$brand-linkedin: 	#217bc1;
+
+// ///////////////////
+// Typography
+// ///////////////////
+
+$fontFamily:		'lato',"Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$fontFamilyAlt:		Georgia, "Times New Roman", Times, serif !default;
+$fontFamilyMono:	Monaco, Menlo, Consolas, "Courier New", monospace !default;
+
+// These Properties should be set the same
+// A base-font-size of 62.5% should there
+// equate to a basline-px of 10px
+
+$base-font-size: 		100%;
+$baseline-px: 			16px;
+$base-line-height: 		1.5;
+$base-line-height-px: 	24px;
+
+$padding: 				24px;
+
+
+// Our Default Modular Scale
+//
+//	16px @ 1:1.5
+//	20px @ 1:1.5
+//
+//	A chart of values can be viewed here:
+//	http://modularscale.com/scale/?px1=16&px2=20&ra1=1.5&ra2=0
+//
+
+$fs-xx-lg:        45px;		// 2.813
+$fs-x-lg:         36px;		// 2.25
+$fs-lg:           30px;		// 1.875
+$fs-xx-normal:    24px;		// 1.5
+$fs-x-normal:     20px;		// 1.25
+$fs-normal:       $baseline-px;		// 1 or 16px
+$fs-sm:           13.33px;	// 0.833
+$fs-x-sm:         10.667px;	// 0.667
+$fs-xx-sm:        8.889px;	// 0.556
+
+// ///////////////////
+// Borders
+// ///////////////////
+
+$border-thin: 	1px;
+$border-med: 	3px;
+$border-thick: 	7px;
+
+// ///////////////////
+// Breakpoints
+// ///////////////////
+
+$bp-xsmall: 	30em; 	//480px @ 16 base font
+$bp-small:	 	48em; 	//768px @ 16 base font
+$bp-medium: 	60em;	//960px @ 16 base font
+$bp-large:		75em; 	//1200px @ 16 base font

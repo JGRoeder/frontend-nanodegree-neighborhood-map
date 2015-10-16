@@ -1,0 +1,24 @@
+<div class="search-input">
+<input class="search-field" type="text" data-bind="textInput: keyword" placeholder="Search Location">
+<span class="search-button">
+  <div class="search-icon">
+    <svg viewBox="0 0 100 100" class="icon search">
+      <use xlink:href="#icon-search"></use>
+    </svg>
+  </div>
+</span>
+<span class="search-clear">
+  <a href="#" class="button-anchor" data-bind="event: {click: clearSearch}, visible: keyword"></a>
+  <div class="search-icon" data-bind="css: {enabled: keyword}">
+    <svg viewBox="0 0 100 100" class="icon cross">
+      <use xlink:href="#icon-cross"></use>
+    </svg>
+  </div>
+</span>
+</div>
+<div class="search-suggestions" data-bind="visible: suggestions">
+  <div class="search-for">Search for: <span class="typed" data-bind="text: keyword"></span></div>
+  <ul class="suggestion-list" data-bind="foreach: suggestions">
+    <li data-bind="text: formatted_address, event: {click: $parent.boundGetClick}"></li>
+  </ul>
+</div>

@@ -1,0 +1,150 @@
+// Thanks to: http://www.antimath.info/css/sass-sqrt-function/
+// Using sqrt to get the size of the map pin. You could do this manually,
+// if your pin is a different shape.
+@function sqrt($r) {
+    $x0: 1;
+    $x1: $x0;
+    @for $i from 1 through 10 {
+        $x1: $x0 - ($x0 * $x0 - abs($r)) / (2 * $x0);
+        $x0: $x1;
+    }
+    @return $x1;
+}
+$pinWidth: 48px;
+$pinHeightFactor: ((1 + sqrt(2))/2);
+$pinHeight: $pinHeightFactor * $pinWidth;
+//$pinColor: #f93c11;
+$natural: #45B964;
+$historic: #f93c11;
+$monument: #4183D6;
+$shadowOpacity: .5;
+$shadow-size: 24px;
+$pulseSize: 48px;
+.pin-wrap {
+    position: absolute;
+    width: $pinWidth;
+    height: $pinWidth;
+    margin-top: -$pinHeight;
+    margin-left: -$pinWidth/2;
+    transform-origin: 50% ($pinHeightFactor * 100%) 0;
+}
+.pin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $pinWidth;
+    height: $pinWidth;
+    margin-top: -$pinWidth/2;
+    margin-left: -$pinWidth/2;
+    transform-origin: 50% ($pinHeightFactor * 100%) 0;
+}
+.pin::after {
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+    width: $pinWidth;
+    height: $pinWidth;
+    content: '';
+    transform: rotateZ(-45deg);
+    //border: 10px solid $pinColor;
+    border-radius: 50% 50% 50% 50%;
+    box-shadow: 1px -1px 3px -1px rgba(0, 0, 0, 0.51);
+}
+.pin::before {
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+    width: $pinWidth;
+    height: $pinWidth;
+    content: '';
+    transform: rotateZ(-45deg);
+    //border: 9px solid darken($pinColor, 10%);
+    border-radius: 50% 50% 50% 0;
+    ;
+}
+.marker-historic .pin:after {
+  border: 10px solid $historic;
+}
+.marker-historic .pin:before {
+  border: 9px solid darken($historic, 10%);
+}
+.marker-natural .pin:after {
+  border: 10px solid $natural;
+}
+.marker-natural .pin:before {
+  border: 9px solid darken($natural, 10%);
+}
+.marker-monument .pin:after {
+  border: 10px solid $monument;
+}
+.marker-monument .pin:before {
+  border: 9px solid darken($monument, 10%);
+}
+.shadow {
+    position: absolute;
+}
+.shadow::after {
+    position: absolute;
+    left: -100px - $shadow-size/2;
+    display: block;
+    width: $shadow-size;
+    height: $shadow-size;
+    margin-top: -$shadow-size/2;
+    content: '';
+    transform: rotateX(55deg);
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, $shadowOpacity) 100px 0 20px;
+}
+.pulser {
+  position: absolute;
+  margin-top: -$pulseSize/2;
+  margin-left: -$pulseSize/2;
+  transform: rotateX(55deg);
+}
+// .pulse {
+//     position: absolute;
+//     margin-top: -$pulseSize/2;
+//     margin-left: -$pulseSize/2;
+//     transform: rotateX(55deg);
+// }
+.pulse::after {
+    display: block;
+    width: $pulseSize;
+    height: $pulseSize;
+    content: '';
+    animation: pulsate 1s ease-out;
+    //animation-delay: 1.1s;
+    animation-iteration-count: infinite;
+    opacity: 0;
+    border-radius: 50%;
+    box-shadow: 0 0 1px 10px rgba(0, 0, 0, $shadowOpacity);
+    //box-shadow: 0 0 6px 3px rgba($pinColor, 1.0);
+}
+@keyframes pulsate {
+    0% {
+        transform: scale(.1, .1);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.2, 1.2);
+        opacity: 0;
+    }
+}
+
+@keyframes wobble {
+  0% {transform: none}
+  50% {transform: rotateZ(-45deg)}
+  75% {transform: rotateZ(15deg)}
+  100% {transform: none}
+}
+
+.wobbly {
+  animation: wobble 0.3s;
+}
+
+.infowindow {
+  line-height: 0.5;
+}

@@ -1,0 +1,37 @@
+{
+  "name": "frontend-nanodegree-neighborhood-map",
+  "version": "1.0.0",
+  "description": "Neighborhood map project for Udacity FEND",
+  "main": "/dist/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "J.G.Roeder",
+  "license": "ISC",
+  "devDependencies": {
+    "brfs": "^1.4.1",
+    "browserify": "^11.0.1",
+    "console-browserify": "^1.1.0",
+    "del": "^1.2.1",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-imagemin": "^2.3.0",
+    "gulp-inject": "^1.5.0",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-minify-html": "^1.0.4",
+    "gulp-newer": "^0.5.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-svgstore": "^5.0.4",
+    "gulp-uglify": "^1.4.2",
+    "through2": "^2.0.0"
+  },
+  "dependencies": {
+    "jquery": "^2.1.4",
+    "knockout": "^3.3.0",
+    "knockout-postbox": "^0.5.2",
+    "underscore": "^1.8.3"
+  }
+}

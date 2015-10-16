@@ -1,0 +1,30 @@
+{
+  "build_dir": "build",
+  "src": {
+    "js": "src/js/**/*",
+    "img": "src/img/*.*",
+    "css": "src/css/main.scss",
+    "base": "src/*.*"
+  },
+  "target": {
+    "js": "/js",
+    "img": "/img/",
+    "css": "/css"
+  },
+  "vendor": {
+    "target": "/vendor",
+    "src": {
+      "js": [
+        "src/vendor/bower_modules/jquery/dist/jquery.js",
+        "src/vendor/bower_modules/knockout/dist/knockout.debug.js",
+        "src/vendor/bower_modules/requirejs/require.js",
+        "src/vendor/bower_modules/requirejs-text/text.js",
+        "src/vendor/bower_modules/requirejs-plugins/src/async.js",
+        "src/vendor/bower_modules/requirejs-plugins/src/propertyParser.js",
+        "src/vendor/bower_modules/requirejs-plugins/src/goog.js",
+        "src/vendor/bower_modules/requirejs-plugins/src/font.js",
+        "src/vendor/bower_modules/knockout-postbox/build/knockout-postbox.js"
+      ]
+    }
+  }
+}

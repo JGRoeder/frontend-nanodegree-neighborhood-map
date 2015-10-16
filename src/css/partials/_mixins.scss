@@ -1,0 +1,91 @@
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
+// Non-library Provided ( Custom ) mixins
+// ie. Everything in this file, should be
+// prefixed with 'c-'
+// For Example:
+// @mixin c-mymixin($property,$value)
+
+// Baseline, measured in pixels
+// The value should be the same as the font-size value for the html element
+// If the html element's font-size is set to 62.5% (of the browser's default font-size of 16px),
+// then the variable below would be 10px.
+//
+//	Sample Input
+//
+//	.element {
+//		@include c-rem('padding',10px 0 2px 5px);
+//	}
+//
+// Sample Output
+//
+//	.element {
+//		padding: 10px 0 2px 5px;
+//		padding: 1rem 0 0.2rem 0.5rem;
+//  }
+//
+
+//$baseline-px: 16px; ( Currently Set in _variables.scss)
+
+// @mixin c-rem($property, $px-values) {
+//   // Convert the baseline into rems
+//   $baseline-rem: $baseline-px / 1rem * 1;
+//   // Print the first line in pixel values
+//   #{$property}: $px-values;
+//   // If there is only one (numeric) value, return the property/value line for it.
+//   @if type-of($px-values) == "number" {
+//     #{$property}: $px-values / $baseline-rem; }
+//   @else {
+//     // Create an empty list that we can dump values into
+//     $rem-values: ();
+//     @each $value in $px-values {
+//       // If the value is zero or not a number, return it
+//       @if $value == 0 or type-of( $value ) != "number" {
+//         $rem-values: append($rem-values, $value); }
+//       @else {
+//         $rem-values: append($rem-values, $value / $baseline-rem); } }
+//     // Return the property and its list of converted values
+//     #{$property}: $rem-values; } }
+
+
+@function parseInt($n) {
+  @return $n / ( $n * 0 + 1);
+}
+
+
+//$baseline-px: 16px;
+
+// Generates rem values with px fallbacks for given property
+// this mixin relies on $baseline-px being declared
+// and on the function parseInt ( strips units from numbers )
+//
+// eg. c-rem('padding', 10px 0 2px 5px);
+//
+// will return   padding: 0.625rem 0 0.125rem 0.3125rem;
+@mixin c-rem($property, $values) {
+  #{$property}: $values;
+
+  $list: ();
+
+  @each $value in $values {
+    @if (type-of($value) == "number" and ($value != 0)) {
+      $val: parseInt($value) / parseInt($baseline-px) + rem;
+      $list: append($list, $val);
+    }
+    @if (type-of($value) == "number" and ($value == 0)) {
+      $list: append($list, parseInt($value));
+    }
+  }
+  #{$property}: $list;
+}
+
+@mixin absolute-center( $width ) {
+  $width: $width;
+  $height: $width;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: $width * -0.5;
+  margin-left: $height * -0.5;
+}
